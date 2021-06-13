@@ -9,6 +9,7 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_MessageBuilding(void);
+extern void test_PostMemoryCorruption(void);
 
 
 /*=======Mock Management=====*/
@@ -71,6 +72,7 @@ int main(void)
 {
   UnityBegin("test/splitpacksTest.c");
   run_test(test_MessageBuilding, "test_MessageBuilding", 25);
+  run_test(test_PostMemoryCorruption, "test_PostMemoryCorruption", 32);
 
   return UnityEnd();
 }

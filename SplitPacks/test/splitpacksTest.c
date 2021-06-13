@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MESSAGE_SIZE 100
-#define PADDING_CHAR '0'
+#define PADDING_CHAR '\0'
 
 static char message[MESSAGE_SIZE];
 static const char *expected;
@@ -24,7 +24,14 @@ static void expect(const char * s)
 
 void test_MessageBuilding(void)
 {
-    buildMessage(message, 24);
-    expect(message);
+    expect("ABCDEFGHIJKLMNOPQRSTUVWX");
+    buildMessage(message, DATA_SIZE);
     TEST_ASSERT_EQUAL_STRING(expected, message);
+}
+
+void test_PostMemoryCorruption(void)
+{
+    expect(PADDING_CHAR);
+    buildMessage(message, DATA_SIZE);
+    TEST_ASSERT_EQUAL_CHAR(PADDING_CHAR, message[DATA_SIZE]);
 }
