@@ -4,12 +4,13 @@
 #include "unity.h"
 #include "splitpacks.h"
 #include <string.h>
+#include <stdlib.h>
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_MessageBuilding(void);
-extern void test_PostMemoryCorruption(void);
+extern void test_MessageSplitng(void);
+extern void test_NullTermination(void);
 
 
 /*=======Mock Management=====*/
@@ -71,8 +72,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test/splitpacksTest.c");
-  run_test(test_MessageBuilding, "test_MessageBuilding", 25);
-  run_test(test_PostMemoryCorruption, "test_PostMemoryCorruption", 32);
+  run_test(test_MessageSplitng, "test_MessageSplitng", 33);
+  run_test(test_NullTermination, "test_NullTermination", 47);
 
   return UnityEnd();
 }

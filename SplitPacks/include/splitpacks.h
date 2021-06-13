@@ -4,8 +4,6 @@
 #define DATA_SIZE 24
 #define PACK_SIZE 3
 
-int split(void);
-
-void buildMessage(char* buffer, unsigned int bufferSize);
+void splitMessage(const char* message, unsigned int length, unsigned int numPacket, char** output);
 
 #endif
