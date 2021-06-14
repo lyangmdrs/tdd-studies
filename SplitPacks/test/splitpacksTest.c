@@ -7,6 +7,7 @@
     [x] The module recieves a message and splits it in a determinated number of messages (packets)
     [x] The packets must be null-terminated
     [x] The module recieves a determinated number of packets and join all of them in a message
+    [-] Guarantee the equalsize of packets, excep the last one
 */
 
 static char** output;
