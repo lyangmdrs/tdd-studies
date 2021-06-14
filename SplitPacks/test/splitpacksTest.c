@@ -6,7 +6,7 @@
     SplitPacks Module Test:
     [x] The module recieves a message and splits it in a determinated number of messages (packets)
     [x] The packets must be null-terminated
-    [-] The module recieves a determinated number of packets and join all of them in a message
+    [x] The module recieves a determinated number of packets and join all of them in a message
 */
 
 static char** output;
@@ -53,4 +53,36 @@ void test_NullTermination(void)
 
     TEST_ASSERT_EQUAL_CHAR('\0', output[0][5]);
     TEST_ASSERT_EQUAL_CHAR('\0', output[1][5]);
+}
+
+void test_JunctionOfPackets(void)
+{
+    int length = 10;
+    int numPacks = 2;
+    
+    char* message;
+
+    message = malloc((length + 1) * sizeof(char));
+
+    splitMessage("ABCDEFGHIJ", length, numPacks, output);
+    joinPackets(output, numPacks, length/numPacks, message);
+
+    expect("ABCDEFGHIJ");
+
+    TEST_ASSERT_EQUAL_STRING(expected, message);
+}
+
+void test_JunctionOfPacketsNullTermination(void)
+{
+    int length = 10;
+    int numPacks = 2;
+    
+    char* message;
+
+    message = malloc((length + 1) * sizeof(char));
+
+    splitMessage("ABCDEFGHIJ", length, numPacks, output);
+    joinPackets(output, numPacks, length/numPacks, message);
+
+    TEST_ASSERT_EQUAL_CHAR('\0', message[length]);
 }

@@ -11,6 +11,8 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_MessageSplitng(void);
 extern void test_NullTermination(void);
+extern void test_JunctionOfPackets(void);
+extern void test_JunctionOfPacketsNullTermination(void);
 
 
 /*=======Mock Management=====*/
@@ -74,6 +76,8 @@ int main(void)
   UnityBegin("test/splitpacksTest.c");
   run_test(test_MessageSplitng, "test_MessageSplitng", 33);
   run_test(test_NullTermination, "test_NullTermination", 47);
+  run_test(test_JunctionOfPackets, "test_JunctionOfPackets", 58);
+  run_test(test_JunctionOfPacketsNullTermination, "test_JunctionOfPacketsNullTermination", 75);
 
   return UnityEnd();
 }
