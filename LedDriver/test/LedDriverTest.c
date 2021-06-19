@@ -5,7 +5,7 @@
     LedDriver Module Test
     [✔] - Create LEDs in off state;
     [✔] - Turn on a single LED;
-    [❌] - Turn off a single LED;
+    [✔] - Turn off a single LED;
 */
 
 void setUp(void)
