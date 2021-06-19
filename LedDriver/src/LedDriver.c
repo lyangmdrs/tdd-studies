@@ -1,7 +1,7 @@
 #include "LedDriver.h"
 
 #define ALL_LEDS_ON 0xFFFF
-#define ALL_LEDS_OFF ~(ALL_LEDS_ON)
+#define ALL_LEDS_OFF 0
 
 static uint16_t * ledsAddress;
 
