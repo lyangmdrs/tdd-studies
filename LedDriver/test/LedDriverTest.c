@@ -30,3 +30,11 @@ void test_TurnOnLedOne(void)
     LedDriver_TurnOn(1);
     TEST_ASSERT_EQUAL_HEX16(1, virtualLeds);
 }
+
+void test_TurnOffLedOne(void)
+{
+    uint16_t virtualLeds;
+    LedDriver_Create(&virtualLeds);
+    LedDriver_TurnOff(1);
+    TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
+}
