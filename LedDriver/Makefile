@@ -51,13 +51,13 @@ TARGET = $(TARGET_BASE)$(TARGET_EXTENSION)
 
 SRC_FILES=$(UNITY_ROOT)/src/unity.c  src/$(PROJ_NAME).c  test/$(PROJ_NAME)Test.c  test/test_runners/$(PROJ_NAME)Test_Runner.c
 
-INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -Iinclude
+INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -Ilib
 SYMBOLS=
 
 all: clean default
 
 default: $(SRC_FILES)
-	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES) -o $(TARGET1)
+	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES) -o $(TARGET)
 	- $(TARGET)
 
 test/test_runners/$(PROJ_NAME)Test_Runner.c: test/$(PROJ_NAME)Test.c
