@@ -46,7 +46,7 @@ void test_TurnOnMultipleLeds(void)
     TEST_ASSERT_EQUAL_HEX16(0x180, virtualLeds);
 }
 
-void test_TunrAllon(void)
+void test_TunrAllOn(void)
 {
     LedDriver_TurnAllOn();
     TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtualLeds);
