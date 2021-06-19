@@ -11,6 +11,7 @@ extern void test_LedsOffAfterCreate(void);
 extern void test_TurnOnLedOne(void);
 extern void test_TurnOffLedOne(void);
 extern void test_TurnOnMultipleLeds(void);
+extern void test_TunrAllon(void);
 
 
 /*=======Mock Management=====*/
@@ -72,10 +73,11 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test/LedDriverTest.c");
-  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 20);
-  run_test(test_TurnOnLedOne, "test_TurnOnLedOne", 27);
-  run_test(test_TurnOffLedOne, "test_TurnOffLedOne", 33);
-  run_test(test_TurnOnMultipleLeds, "test_TurnOnMultipleLeds", 40);
+  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 22);
+  run_test(test_TurnOnLedOne, "test_TurnOnLedOne", 29);
+  run_test(test_TurnOffLedOne, "test_TurnOffLedOne", 35);
+  run_test(test_TurnOnMultipleLeds, "test_TurnOnMultipleLeds", 42);
+  run_test(test_TunrAllon, "test_TunrAllon", 49);
 
   return UnityEnd();
 }
