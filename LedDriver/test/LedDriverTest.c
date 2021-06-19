@@ -3,9 +3,7 @@
 
 /*
     LedDriver Module Test
-    [✔] - Create LEDs in off state;
-    [✔] - Turn on a single LED;
-    [✔] - Turn off a single LED;
+    [ ] - Turn on multiple LEDs
 */
 
 static uint16_t virtualLeds;
@@ -38,3 +36,4 @@ void test_TurnOffLedOne(void)
     LedDriver_TurnOff(1);
     TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
 }
+
