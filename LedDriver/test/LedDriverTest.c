@@ -3,7 +3,9 @@
 
 /*
     LedDriver Module Test
-    [ ] - Turn on multiple LEDs
+    [x] - Turn on multiple LEDs
+    [ ] - Turn off any LEDs
+    [ ] - Turn on all LEDs
 */
 
 static uint16_t virtualLeds;
