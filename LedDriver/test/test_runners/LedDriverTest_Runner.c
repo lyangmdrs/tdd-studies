@@ -71,9 +71,9 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test/LedDriverTest.c");
-  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 19);
-  run_test(test_TurnOnLedOne, "test_TurnOnLedOne", 26);
-  run_test(test_TurnOffLedOne, "test_TurnOffLedOne", 34);
+  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 22);
+  run_test(test_TurnOnLedOne, "test_TurnOnLedOne", 29);
+  run_test(test_TurnOffLedOne, "test_TurnOffLedOne", 35);
 
   return UnityEnd();
 }
