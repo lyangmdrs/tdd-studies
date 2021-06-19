@@ -1,10 +1,14 @@
 #include "LedDriver.h"
 
+#define ALL_LEDS_ON 0xFFFF
+#define ALL_LEDS_OFF ~(ALL_LEDS_ON)
+
 static uint16_t * ledsAddress;
+
 void LedDriver_Create(uint16_t * address)
 {
     ledsAddress = address;
-    *ledsAddress = 0;
+    *ledsAddress = ALL_LEDS_OFF;
 }
 
 void LedDriver_TurnOn(int ledNumber)
@@ -19,5 +23,5 @@ void LedDriver_TurnOff(int ledNumber)
 
 void LedDriver_TurnAllOn(void)
 {
-    *ledsAddress = 0xFFFF;
+    *ledsAddress = ALL_LEDS_ON;
 }
