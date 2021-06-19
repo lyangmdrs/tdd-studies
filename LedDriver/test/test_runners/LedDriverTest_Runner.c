@@ -8,6 +8,7 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_LedsOffAfterCreate(void);
+extern void test_TurnOnLedOne(void);
 
 
 /*=======Mock Management=====*/
@@ -70,6 +71,7 @@ int main(void)
 {
   UnityBegin("test/LedDriverTest.c");
   run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 17);
+  run_test(test_TurnOnLedOne, "test_TurnOnLedOne", 24);
 
   return UnityEnd();
 }
