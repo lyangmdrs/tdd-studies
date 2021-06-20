@@ -13,6 +13,7 @@ extern void test_TurnOffLedOne(void);
 extern void test_TurnOnMultipleLeds(void);
 extern void test_TunrAllOn(void);
 extern void test_TurnOffAnyLed(void);
+extern void test_LedMemoryIsNotReadable(void);
 
 
 /*=======Mock Management=====*/
@@ -80,6 +81,7 @@ int main(void)
   run_test(test_TurnOnMultipleLeds, "test_TurnOnMultipleLeds", 35);
   run_test(test_TunrAllOn, "test_TunrAllOn", 42);
   run_test(test_TurnOffAnyLed, "test_TurnOffAnyLed", 48);
+  run_test(test_LedMemoryIsNotReadable, "test_LedMemoryIsNotReadable", 55);
 
   return UnityEnd();
 }

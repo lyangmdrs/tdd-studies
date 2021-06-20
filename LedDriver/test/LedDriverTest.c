@@ -51,3 +51,10 @@ void test_TurnOffAnyLed(void)
     LedDriver_TurnOff(8);
     TEST_ASSERT_EQUAL_HEX16(0xFF7F, virtualLeds);
 }
+
+void test_LedMemoryIsNotReadable(void)
+{
+    virtualLeds = 0xFFFF;
+    LedDriver_TurnOn(8);
+    TEST_ASSERT_EQUAL_HEX16(0x80, virtualLeds);
+}
