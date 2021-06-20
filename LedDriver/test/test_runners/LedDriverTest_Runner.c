@@ -15,7 +15,7 @@ extern void test_TunrAllOn(void);
 extern void test_TurnOffAnyLed(void);
 extern void test_LedMemoryIsNotReadable(void);
 extern void test_UpperAndLowerBounds(void);
-extern void test_OutOfBoundsChangesNothing(void);
+extern void test_TurnOnOutOfBoundsChangesNothing(void);
 
 
 /*=======Mock Management=====*/
@@ -85,7 +85,7 @@ int main(void)
   run_test(test_TurnOffAnyLed, "test_TurnOffAnyLed", 48);
   run_test(test_LedMemoryIsNotReadable, "test_LedMemoryIsNotReadable", 55);
   run_test(test_UpperAndLowerBounds, "test_UpperAndLowerBounds", 62);
-  run_test(test_OutOfBoundsChangesNothing, "test_OutOfBoundsChangesNothing", 69);
+  run_test(test_TurnOnOutOfBoundsChangesNothing, "test_TurnOnOutOfBoundsChangesNothing", 69);
 
   return UnityEnd();
 }

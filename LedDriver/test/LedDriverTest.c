@@ -66,7 +66,7 @@ void test_UpperAndLowerBounds(void)
     TEST_ASSERT_EQUAL_HEX16(0x8001, virtualLeds);
 }
 
-void test_OutOfBoundsChangesNothing(void)
+void test_TurnOnOutOfBoundsChangesNothing(void)
 {
     LedDriver_TurnOn(-1);
     TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
