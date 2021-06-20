@@ -26,6 +26,9 @@ void LedDriver_TurnOn(int ledNumber)
 
 void LedDriver_TurnOff(int ledNumber)
 {
+    if((LOWER_LED_BOUND > ledNumber) || (ledNumber > UPPER_LED_BOUND))
+        return;
+        
     ledsImage &= ~convertLedNumberToBit(ledNumber);
     updateHardware();
 }
