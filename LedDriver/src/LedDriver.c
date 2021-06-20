@@ -8,11 +8,6 @@
 static uint16_t * ledsAddress;
 static uint16_t ledsImage;
 
-static void updateHardware(void)
-{
-    *ledsAddress = ledsImage;
-}
-
 void LedDriver_Create(uint16_t * address)
 {
     ledsAddress = address;
@@ -25,13 +20,13 @@ void LedDriver_TurnOn(int ledNumber)
     if((LOWER_LED_BOUND > ledNumber) || (ledNumber > UPPER_LED_BOUND))
         return;
 
-    ledsImage |= 1 << (ledNumber - 1);
+    ledsImage |= convertLedNumberToBit(ledNumber);
     updateHardware();
 }
 
 void LedDriver_TurnOff(int ledNumber)
 {
-    ledsImage &= ~(1 << (ledNumber - 1));
+    ledsImage &= ~convertLedNumberToBit(ledNumber);
     updateHardware();
 }
 
@@ -39,4 +34,14 @@ void LedDriver_TurnAllOn(void)
 {
     ledsImage = ALL_LEDS_ON;
     updateHardware();
+}
+
+uint16_t convertLedNumberToBit(int ledNumber)
+{
+    return (1 << (ledNumber - 1));
+}
+
+void updateHardware(void)
+{
+    *ledsAddress = ledsImage;
 }
