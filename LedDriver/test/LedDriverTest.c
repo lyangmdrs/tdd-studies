@@ -77,3 +77,19 @@ void test_TurnOnOutOfBoundsChangesNothing(void)
     LedDriver_TurnOn(2352);
     TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
 }
+
+void test_TurnOffOutOfBoundsChangesNothing(void)
+{
+    LedDriver_TurnAllOn();
+    LedDriver_TurnOff(-1);
+    TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtualLeds);
+    LedDriver_TurnAllOn();
+    LedDriver_TurnOff(0);
+    TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtualLeds);
+    LedDriver_TurnAllOn();
+    LedDriver_TurnOn(17);
+    TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtualLeds);
+    LedDriver_TurnAllOn();
+    LedDriver_TurnOff(2352);
+    TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtualLeds);
+}
