@@ -113,10 +113,14 @@ void test_CheckIfLedIsOn(void)
 void test_OutOfBoundLedsAreAlwaysOff(void)
 {
     TEST_ASSERT_FALSE(LedDriver_IsOn(0));
+    TEST_ASSERT_TRUE(LedDriver_IsOff(0));
     TEST_ASSERT_FALSE(LedDriver_IsOn(17));
+    TEST_ASSERT_TRUE(LedDriver_IsOff(17));
     LedDriver_TurnAllOn();
     TEST_ASSERT_FALSE(LedDriver_IsOn(0));
+    TEST_ASSERT_TRUE(LedDriver_IsOff(0));
     TEST_ASSERT_FALSE(LedDriver_IsOn(17));
+    TEST_ASSERT_TRUE(LedDriver_IsOff(17));
 }
 
 void test_TurnAllOf(void)

@@ -97,8 +97,8 @@ int main(void)
   run_test(test_OutOfBoudsProducesRuntimerError, "test_OutOfBoudsProducesRuntimerError", 98);
   run_test(test_CheckIfLedIsOn, "test_CheckIfLedIsOn", 106);
   run_test(test_OutOfBoundLedsAreAlwaysOff, "test_OutOfBoundLedsAreAlwaysOff", 113);
-  run_test(test_TurnAllOf, "test_TurnAllOf", 122);
-  run_test(test_CheckIfLedIsOff, "test_CheckIfLedIsOff", 129);
+  run_test(test_TurnAllOf, "test_TurnAllOf", 126);
+  run_test(test_CheckIfLedIsOff, "test_CheckIfLedIsOff", 133);
 
   return UnityEnd();
 }
