@@ -1,5 +1,6 @@
 #include "LedDriver.h"
 #include "unity.h"
+#include "RuntimeErrorStub.h"
 
 static uint16_t virtualLeds;
 
@@ -92,4 +93,12 @@ void test_TurnOffOutOfBoundsChangesNothing(void)
     LedDriver_TurnAllOn();
     LedDriver_TurnOff(2352);
     TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtualLeds);
+}
+
+void test_OutOfBoudsProducesRuntimerError(void)
+{
+    LedDriver_TurnOn(-1);
+    TEST_ASSERT_EQUAL_STRING("LED Driver: out-of-bouds LED!",
+                             RuntimeErrorStub_GetLastError());
+    TEST_ASSERT_EQUAL(-1, RuntimeErrorStub_GetLastParameter());
 }

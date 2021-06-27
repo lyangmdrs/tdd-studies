@@ -3,6 +3,7 @@
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
 #include "LedDriver.h"
+#include "RuntimeErrorStub.h"
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
@@ -17,6 +18,7 @@ extern void test_LedMemoryIsNotReadable(void);
 extern void test_UpperAndLowerBounds(void);
 extern void test_TurnOnOutOfBoundsChangesNothing(void);
 extern void test_TurnOffOutOfBoundsChangesNothing(void);
+extern void test_OutOfBoudsProducesRuntimerError(void);
 
 
 /*=======Mock Management=====*/
@@ -78,16 +80,17 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test/LedDriverTest.c");
-  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 15);
-  run_test(test_TurnOnLedOne, "test_TurnOnLedOne", 22);
-  run_test(test_TurnOffLedOne, "test_TurnOffLedOne", 28);
-  run_test(test_TurnOnMultipleLeds, "test_TurnOnMultipleLeds", 35);
-  run_test(test_TunrAllOn, "test_TunrAllOn", 42);
-  run_test(test_TurnOffAnyLed, "test_TurnOffAnyLed", 48);
-  run_test(test_LedMemoryIsNotReadable, "test_LedMemoryIsNotReadable", 55);
-  run_test(test_UpperAndLowerBounds, "test_UpperAndLowerBounds", 62);
-  run_test(test_TurnOnOutOfBoundsChangesNothing, "test_TurnOnOutOfBoundsChangesNothing", 69);
-  run_test(test_TurnOffOutOfBoundsChangesNothing, "test_TurnOffOutOfBoundsChangesNothing", 81);
+  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 16);
+  run_test(test_TurnOnLedOne, "test_TurnOnLedOne", 23);
+  run_test(test_TurnOffLedOne, "test_TurnOffLedOne", 29);
+  run_test(test_TurnOnMultipleLeds, "test_TurnOnMultipleLeds", 36);
+  run_test(test_TunrAllOn, "test_TunrAllOn", 43);
+  run_test(test_TurnOffAnyLed, "test_TurnOffAnyLed", 49);
+  run_test(test_LedMemoryIsNotReadable, "test_LedMemoryIsNotReadable", 56);
+  run_test(test_UpperAndLowerBounds, "test_UpperAndLowerBounds", 63);
+  run_test(test_TurnOnOutOfBoundsChangesNothing, "test_TurnOnOutOfBoundsChangesNothing", 70);
+  run_test(test_TurnOffOutOfBoundsChangesNothing, "test_TurnOffOutOfBoundsChangesNothing", 82);
+  run_test(test_OutOfBoudsProducesRuntimerError, "test_OutOfBoudsProducesRuntimerError", 98);
 
   return UnityEnd();
 }
