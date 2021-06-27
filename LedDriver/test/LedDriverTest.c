@@ -125,3 +125,10 @@ void test_TurnAllOf(void)
     LedDriver_TurnAllOff();
     TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
 }
+
+void test_CheckIfLedIsOff(void)
+{
+    TEST_ASSERT_TRUE(LedDriver_IsOff(7));
+    LedDriver_TurnOn(7);
+    TEST_ASSERT_FALSE(LedDriver_IsOff(7));
+}
