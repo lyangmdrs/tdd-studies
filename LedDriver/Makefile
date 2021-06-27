@@ -49,9 +49,9 @@ TARGET_BASE=bin/test
 
 TARGET = $(TARGET_BASE)$(TARGET_EXTENSION)
 
-SRC_FILES=$(UNITY_ROOT)/src/unity.c  src/$(PROJ_NAME).c  test/$(PROJ_NAME)Test.c  test/test_runners/$(PROJ_NAME)Test_Runner.c
+SRC_FILES=$(UNITY_ROOT)/src/unity.c  src/$(PROJ_NAME).c util/RuntimeErrorStub.c test/$(PROJ_NAME)Test.c  test/test_runners/$(PROJ_NAME)Test_Runner.c
 
-INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -Ilib
+INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -Ilib -Iutil
 SYMBOLS=
 
 all: clean default
