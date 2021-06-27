@@ -20,6 +20,7 @@ extern void test_TurnOnOutOfBoundsChangesNothing(void);
 extern void test_TurnOffOutOfBoundsChangesNothing(void);
 extern void test_OutOfBoudsProducesRuntimerError(void);
 extern void test_CheckIfLedIsOn(void);
+extern void test_OutOfBoundLedsAreAlwaysOff(void);
 
 
 /*=======Mock Management=====*/
@@ -93,6 +94,7 @@ int main(void)
   run_test(test_TurnOffOutOfBoundsChangesNothing, "test_TurnOffOutOfBoundsChangesNothing", 82);
   run_test(test_OutOfBoudsProducesRuntimerError, "test_OutOfBoudsProducesRuntimerError", 98);
   run_test(test_CheckIfLedIsOn, "test_CheckIfLedIsOn", 106);
+  run_test(test_OutOfBoundLedsAreAlwaysOff, "test_OutOfBoundLedsAreAlwaysOff", 113);
 
   return UnityEnd();
 }
