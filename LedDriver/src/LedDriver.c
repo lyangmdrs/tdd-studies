@@ -1,4 +1,5 @@
 #include "LedDriver.h"
+#include "RuntimeErrorStub.h"
 
 #define ALL_LEDS_ON 0xFFFF
 #define ALL_LEDS_OFF 0
