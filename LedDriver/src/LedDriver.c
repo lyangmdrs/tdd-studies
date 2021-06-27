@@ -9,6 +9,21 @@
 static uint16_t * ledsAddress;
 static uint16_t ledsImage;
 
+static uint16_t convertLedNumberToBit(int ledNumber)
+{
+    return (1 << (ledNumber - 1));
+}
+
+static void updateHardware(void)
+{
+    *ledsAddress = ledsImage;
+}
+
+static bool isValidLedNumber(int ledNumber)
+{
+    return ((ledNumber >= LOWER_LED_BOUND) && (ledNumber <= UPPER_LED_BOUND));
+}
+
 void LedDriver_Create(uint16_t * address)
 {
     ledsAddress = address;
@@ -44,19 +59,4 @@ void LedDriver_TurnAllOn(void)
 {
     ledsImage = ALL_LEDS_ON;
     updateHardware();
-}
-
-uint16_t convertLedNumberToBit(int ledNumber)
-{
-    return (1 << (ledNumber - 1));
-}
-
-void updateHardware(void)
-{
-    *ledsAddress = ledsImage;
-}
-
-bool isValidLedNumber(int ledNumber)
-{
-    return ((ledNumber >= LOWER_LED_BOUND) && (ledNumber <= UPPER_LED_BOUND));
 }
