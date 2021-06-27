@@ -118,3 +118,10 @@ void test_OutOfBoundLedsAreAlwaysOff(void)
     TEST_ASSERT_FALSE(LedDriver_IsOn(0));
     TEST_ASSERT_FALSE(LedDriver_IsOn(17));
 }
+
+void test_TurnAllOf(void)
+{
+    LedDriver_TurnAllOn();
+    LedDriver_TurnAllOff();
+    TEST_ASSERT_EQUAL_HEX16(0, virtualLeds);
+}
