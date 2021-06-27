@@ -5,8 +5,8 @@
     void RuntimeError(const char * message, int parameter,
                     const char * file, int line);
 
-    #define RUNTIME_ERROR(descripton, parameter)\
-        RuntimeError(descriprion, parameter, __FILE__, __LINE__)
+    #define RUNTIME_ERROR(description, parameter)\
+        RuntimeError(description, parameter, __FILE__, __LINE__)
     // ---
 
     void RuntimeErrorStub_Reset(void);
