@@ -58,8 +58,5 @@ void updateHardware(void)
 
 bool isValidLedNumber(int ledNumber)
 {
-    if((ledNumber >= LOWER_LED_BOUND) && (ledNumber <= UPPER_LED_BOUND))
-        return true;
-    
-    return false;
+    return ((ledNumber >= LOWER_LED_BOUND) && (ledNumber <= UPPER_LED_BOUND));
 }
