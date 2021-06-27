@@ -57,6 +57,10 @@ void LedDriver_TurnOff(int ledNumber)
 
 bool LedDriver_IsOn(int ledNumber)
 {
+    if(!isValidLedNumber(ledNumber))
+    {
+        return false;
+    }
     return convertLedNumberToBit(ledNumber) && ledsImage;
 }
 
