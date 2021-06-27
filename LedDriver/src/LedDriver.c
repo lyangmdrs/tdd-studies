@@ -19,7 +19,10 @@ void LedDriver_Create(uint16_t * address)
 void LedDriver_TurnOn(int ledNumber)
 {
     if(!isValidLedNumber(ledNumber))
+    {
+        RUNTIME_ERROR("LED Driver: out-of-bouds LED!", ledNumber);
         return;
+    }
 
     ledsImage |= convertLedNumberToBit(ledNumber);
     updateHardware();
@@ -28,7 +31,10 @@ void LedDriver_TurnOn(int ledNumber)
 void LedDriver_TurnOff(int ledNumber)
 {
     if(!isValidLedNumber(ledNumber))
+    {
+        RUNTIME_ERROR("LED Driver: out-of-bouds LED!", ledNumber);
         return;
+    }
 
     ledsImage &= ~convertLedNumberToBit(ledNumber);
     updateHardware();
